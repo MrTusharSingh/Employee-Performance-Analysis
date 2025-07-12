@@ -1,9 +1,11 @@
 services:
   - type: web
-    name: performance-analysis
+    name: employee-performance-analysis
     env: python
-    runtime: python-3.11.8
+    branch: main
     buildCommand: pip install -r requirements.txt
     startCommand: streamlit run dashboard_app.py --server.port=$PORT --server.address=0.0.0.0
-    branch: main
+    runtime: python
+    region: oregon
     plan: free
+    autoDeploy: true
